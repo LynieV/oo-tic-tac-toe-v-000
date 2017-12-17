@@ -36,4 +36,5 @@ class TicTacToe
     else @board[index] != "X" && @board[index] != "O"
       true
     end
+  end
 end
