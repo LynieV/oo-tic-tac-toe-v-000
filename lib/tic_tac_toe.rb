@@ -14,5 +14,5 @@ class TicTacToe
     [2,4,6] #Right diagonal
   ]
 
-  
+
 end
