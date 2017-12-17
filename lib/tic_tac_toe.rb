@@ -53,4 +53,36 @@ class TicTacToe
       turn
     end
   end
+
+  def turn_count
+    @board.count{|token| token == "X" || token == "O"}
+  end
+
+  def current_player
+    turn_count % 2 == 0 ? "X" : "O"
+  end
+
+  def won?
+    WIN_COMBINATIONS.detect do |i|
+      @board[i[0]] == @board[i[1]] && @board[i[0]] == @board[i[2]]
+    end
+  end
+
+  def full?
+    @board.all? do |i|
+      i == "X" || i == "O"
+    end
+  end
+
+  def draw?
+    full? && !won?
+  end
+
+  def over?
+    won? || draw?
+  end
+
+  def winner
+    @board[won?[0]]if won?
+  end
 end
